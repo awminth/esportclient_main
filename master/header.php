@@ -45,16 +45,14 @@
         <header class="bg-light shadow-sm navbar-sticky">
             <div class="navbar navbar-expand-lg navbar-light">
                 <div class="container"><a class="navbar-brand d-none d-sm-block flex-shrink-0 me-4 order-lg-1"
-                        href="index.html"><img src="<?= roothtml.'lib/images/hituplarge.png'?>" width="145" alt="Cartzilla"></a><a
-                        class="navbar-brand d-sm-none me-1 order-lg-1" href="index.html">
-                        <img src="<?= roothtml.'lib/images/1.jpg'?>" class="rounded-3"
-                            width="50" alt="Cartzilla"></a>
+                        href="index.html"><img src="<?= roothtml.'lib/images/hituplarge.png'?>" width="145"
+                            alt="Cartzilla"></a><a class="navbar-brand d-sm-none me-1 order-lg-1" href="index.html">
+                        <img src="<?= roothtml.'lib/images/1.jpg'?>" class="rounded-3" width="50" alt="Cartzilla"></a>
                     <!-- Toolbar-->
                     <div class="navbar-toolbar d-flex align-items-center order-lg-3">
-                        
+
                         <div class="navbar-tool ms-4"><a class="navbar-tool-icon-box bg-secondary dropdown-toggle"
-                                href="<?= roothtml.'index.php'?>"><i
-                                    class="navbar-tool-icon ci-reload"></i></a></div>
+                                href="<?= roothtml.'index.php'?>"><i class="navbar-tool-icon ci-reload"></i></a></div>
                     </div>
                     <div class="collapse navbar-collapse me-auto order-lg-2" id="navbarCollapse">
                         <!-- Categories dropdown-->

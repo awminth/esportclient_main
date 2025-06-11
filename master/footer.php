@@ -24,6 +24,12 @@
 <script src="<?= roothtml.'lib/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js'?>"></script>
 <!-- Main theme script-->
 <script src="<?= roothtml.'lib/js/theme.min.js'?>"></script>
+<!-- jQuery -->
+<script src="<?= roothtml.'lib/jquery/jquery.min.js' ?>"></script>
+<!-- Sweet Alarm -->
+<link href="<?= roothtml.'lib/sweet/sweetalert.css' ?>" rel="stylesheet" />
+<script src="<?= roothtml.'lib/sweet/sweetalert.min.js' ?>"></script>
+<script src="<?= roothtml.'lib/sweet/sweetalert.js' ?>"></script>
 </body>
 
 </html>

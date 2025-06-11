@@ -1,3 +1,4 @@
+<?php include("config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,17 +46,12 @@
         <header class="bg-light shadow-sm navbar-sticky">
             <div class="navbar navbar-expand-lg navbar-light">
                 <div class="container"><a class="navbar-brand d-none d-sm-block flex-shrink-0 me-4 order-lg-1"
-                        href="index.html"><img src="<?= roothtml.'lib/images/hituplarge.png'?>" width="145" alt="Cartzilla"></a><a
-                        class="navbar-brand d-sm-none me-1 order-lg-1" href="index.html">
-                        <img src="<?= roothtml.'lib/images/1.jpg'?>" class="rounded-3"
-                            width="50" alt="Cartzilla"></a>
-                    <!-- Toolbar-->
-                    <div class="navbar-toolbar d-flex align-items-center order-lg-3">
-                        
-                        <div class="navbar-tool ms-4"><a class="navbar-tool-icon-box bg-secondary dropdown-toggle"
-                                href="marketplace-cart.html"><i
-                                    class="navbar-tool-icon ci-reload"></i></a></div>
-                    </div>
+                        href="<?= roothtml . 'index.php' ?>"><img src="<?= roothtml . 'lib/images/headlogo.jpg' ?>"
+                            width="50" alt="HITUPMM.COM" style="border-radius: 8px;"></a><a
+                        class="navbar-brand d-sm-none me-2 order-lg-1" href="<?= roothtml . 'index.php' ?>"><img
+                            src="<?= roothtml . 'lib/images/headlogo.jpg' ?>" width="50" alt="HITUPMM.COM"
+                            style="border-radius: 8px;" style="border-radius: 8px;"></a>
+
                     <div class="collapse navbar-collapse me-auto order-lg-2" id="navbarCollapse">
                         <!-- Categories dropdown-->
                         <ul class="navbar-nav navbar-mega-nav pe-lg-2 me-lg-2">
@@ -202,4 +198,52 @@
                     </div>
                 </div>
             </div>
+            <!-- Search collapse-->
+            <div class="search-box collapse" id="searchBox">
+                <div class="card pt-2 pb-4 border-0 rounded-0">
+                    <div class="container">
+                        <div class="input-group"><i
+                                class="ci-search position-absolute top-50 start-0 translate-middle-y text-muted fs-base ms-3"></i>
+                            <input class="form-control rounded-start" type="text" placeholder="Search marketplace">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
+
+        <section class="container pb-5 mb-lg-3 bg-success mt-1">
+            <!-- Heading-->
+            <div class="d-flex flex-wrap justify-content-between align-items-center pt-1 border-bottom pb-4 mb-4">
+                <h2 class="h3 mb-0 pt-3 me-2">The most recent releases</h2>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer-->
+    <footer class="footer bg-dark pt-5">
+    </footer>
+    <!-- Toolbar for handheld devices (Marketplace)-->
+    <div class="handheld-toolbar">
+        <div class="d-table table-layout-fixed w-100"><a class="d-table-cell handheld-toolbar-item"
+                href="dashboard-favorites.html"><span class="handheld-toolbar-icon"><i class="ci-heart"></i></span><span
+                    class="handheld-toolbar-label">Favorites</span></a><a class="d-table-cell handheld-toolbar-item"
+                href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                onclick="window.scrollTo(0, 0)"><span class="handheld-toolbar-icon"><i class="ci-menu"></i></span><span
+                    class="handheld-toolbar-label">Menu</span></a><a class="d-table-cell handheld-toolbar-item"
+                href="marketplace-cart.html"><span class="handheld-toolbar-icon"><i class="ci-cart"></i><span
+                        class="badge bg-primary rounded-pill ms-1">3</span></span><span
+                    class="handheld-toolbar-label">$56.00</span></a></div>
+    </div>
+    <!-- Back To Top Button--><a class="btn-scroll-top" href="#top" data-scroll><span
+            class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon ci-arrow-up">
+        </i></a>
+    <!-- Vendor scrits: js libraries and plugins-->
+    <script src="<?= roothtml.'lib/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'?>"></script>
+    <script src="<?= roothtml.'lib/vendor/simplebar/dist/simplebar.min.js'?>"></script>
+    <script src="<?= roothtml.'lib/vendor/tiny-slider/dist/min/tiny-slider.js'?>"></script>
+    <script src="<?= roothtml.'lib/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js'?>"></script>
+    <!-- Main theme script-->
+    <script src="<?= roothtml.'lib/js/theme.min.js'?>"></script>
+</body>
+
+</html>

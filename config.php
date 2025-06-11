@@ -14,7 +14,7 @@ if(isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on"){
 define('root',__DIR__.'/');
 
 //Local
-define('roothtml',$chk_link."://".server_name."/esportclient/");
+define('roothtml',$chk_link."://".server_name."/esportclient_main/");
 $con=new mysqli("localhost","root","root","esport");
 
 define('curlink',basename($_SERVER['SCRIPT_NAME']));

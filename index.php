@@ -17,27 +17,31 @@
     <div class="row">
         <div class="col-6 tns-item tns-slide-active">
             <article class="card border-0">
-                <div class="card-img-top position-relative overflow-hidden"><a class="d-block" href="#"><img
-                            src="<?=roothtml.'lib/images/4.jpg'?>" alt="Product image"></a>
+                <div class="card-img-top position-relative overflow-hidden">
+                    <a class="d-block" href="#"><img src="<?=roothtml.'lib/images/4.jpg'?>" alt="Product image"></a>
                 </div>
-                <div class="card-body">
-                    <h3 class="product-title mb-2 fs-base text-center"><a class="d-block text-truncate"
-                            href="#">Aesthetic
-                            art collage</a></h3>
-                </div>
+                <h5 class="product-title mb-2 fs-base text-center mt-2">SBO Sports</h5>
+                <!-- <div class="card-body">
+                    <h3 class="product-title mb-2 fs-base text-center">
+                        <a class="d-block text-truncate" href="#">Aesthetic
+                            art collage</a>
+                    </h3>
+                </div> -->
             </article>
         </div>
 
         <div class="col-6 tns-item tns-slide-active">
             <article class="card border-0">
-                <div class="card-img-top position-relative overflow-hidden"><a class="d-block" href="#"><img
-                            src="<?=roothtml.'lib/images/4.jpg'?>" alt="Product image"></a>
+                <div class="card-img-top position-relative overflow-hidden">
+                    <a class="d-block" href="#"><img src="<?=roothtml.'lib/images/4.jpg'?>" alt="Product image"></a>
                 </div>
-                <div class="card-body">
-                    <h3 class="product-title mb-2 fs-base text-center"><a class="d-block text-truncate"
-                            href="#">Aesthetic
-                            art collage</a></h3>
-                </div>
+                <h5 class="product-title mb-2 fs-base text-center mt-2">Live Casino</h5>
+                <!-- <div class="card-body">
+                    <h3 class="product-title mb-2 fs-base text-center">
+                        <a class="d-block text-truncate" href="#">Aesthetic
+                            art collage</a>
+                    </h3>
+                </div> -->
             </article>
         </div>
     </div>

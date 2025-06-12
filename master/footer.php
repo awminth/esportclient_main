@@ -1,6 +1,6 @@
 <!-- Footer-->
 </main>
-<footer class="footer bg-dark pt-5">
+<footer class="footer bgcolour pt-5">
 </footer>
 <!-- Toolbar for handheld devices (Marketplace)-->
 <div class="handheld-toolbar">

@@ -4,6 +4,7 @@ include(root.'master/header.php');
 ?>
 
 <div class="loginbody">
+    <h3 class="text-center mb-4" style="color:whiteျ;">LOGIN</h3>
     <div class="login-card">
         <!-- Profile Icon -->
         <div class="text-center">

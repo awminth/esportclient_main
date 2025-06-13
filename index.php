@@ -3,6 +3,15 @@
     include("config.php");
     include(root."master/header.php");
 ?>
+<style>
+#sportone,#sporttwo {
+    width: 100%;
+    height: 180px;
+    /* သင့်လိုအပ်ချက်အတိုင်းညှိ */
+    object-fit: cover;
+    cursor: pointer;
+}
+</style>
 <!-- <section class="container pb-5 mb-lg-3 bg-success mt-1"> -->
 <!-- One item + Dots + Loop (defaults) -->
 <div class="tns-carousel tns-nav-enabled m-2">

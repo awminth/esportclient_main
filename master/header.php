@@ -57,9 +57,9 @@
             <div class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <a class="navbar-brand d-none d-sm-block flex-shrink-0 me-4 order-lg-1" href="index.html"><img
-                            src="<?= roothtml.'lib/images/zmh1.png'?>" width="145" alt="Cartzilla"></a><a
+                            src="<?= roothtml.'lib/images/mainlogo.png'?>" width="145" alt="Cartzilla"></a><a
                         class="navbar-brand d-sm-none me-1 order-lg-1" href="index.html">
-                        <img src="<?= roothtml.'lib/images/zmh1.png'?>" class="rounded-3" width="100"
+                        <img src="<?= roothtml.'lib/images/mainlogo.png'?>" class="rounded-3" width="100"
                             alt="Cartzilla"></a>
                     <!-- Toolbar-->
                     <div class="navbar-toolbar d-flex align-items-center order-lg-3">

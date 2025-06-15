@@ -5,7 +5,7 @@
 ?>
 <!-- <section class="container pb-5 mb-lg-3 bg-success mt-1"> -->
 <!-- One item + Dots + Loop (defaults) -->
-<div class="tns-carousel tns-nav-enabled m-2">
+<div class="tns-carousel tns-nav-enabled m-3">
     <div class="tns-carousel-inner" style="height:190px;">
         <img src="<?=roothtml.'lib/images/1.jpg'?>" alt="Alt text" style="height: 100%;" class="rounded-3">
         <img src="<?=roothtml.'lib/images/2.jpg'?>" alt="Alt text" style="height: 100%;" class="rounded-3">
@@ -20,7 +20,7 @@
             <article class="card border-0">
                 <div class="card-img-top position-relative overflow-hidden">
                     <a class="d-block"><img src="<?=roothtml.'lib/images/sbo.jpg'?>" alt="Product image"
-                            id="sportone"></a>
+                            id="sportone" style="height: 180px;"></a>
                 </div>
                 <h5 class="product-title mb-2 fs-base text-center mt-2">SBO Sports</h5>
             </article>
@@ -30,7 +30,7 @@
             <article class="card border-0">
                 <div class="card-img-top position-relative overflow-hidden">
                     <a class="d-block"><img src="<?=roothtml.'lib/images/afb.jpg'?>" alt="Product image"
-                            id="sporttwo"></a>
+                            id="sporttwo" style="height: 180px;"></a>
                 </div>
                 <h5 class="product-title mb-2 fs-base text-center mt-2">Live Casino</h5>
             </article>

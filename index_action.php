@@ -15,6 +15,8 @@ if ($action == "sportlogin") {
     if (isset($_SESSION["esportclient_username"])) {
         $username = $_SESSION["esportclient_username"];
         $password = $_SESSION["esportclient_userpassword"];
+        $_SESSION["esportclient_portfolio"] = $portfolio;
+        $_SESSION["esportclient_gpid"] = $gpid;
         $device = getDeviceType();
 
         mysqli_query($con, "SET TRANSACTION ISOLATION LEVEL SERIALIZABLE");
@@ -138,6 +140,11 @@ if ($action == "sportlogin") {
     else{
         echo 404;
     }  
+}
+
+if ($action == "logout"){
+    session_unset();
+    echo 1;
 }
 
 function getDeviceType() {

@@ -54,17 +54,17 @@
                 <div class="d-flex justify-content-between align-items-center py-2 px-3">
                     <!-- Logo -->
                     <div class="d-flex align-items-center">
-                        <a class="navbar-brand d-none d-sm-block flex-shrink-0 me-4 order-lg-1" href="index.html"><img
-                                src="<?= roothtml.'lib/images/zmh1.png'?>" width="145" alt="Cartzilla"></a><a
-                            class="navbar-brand d-sm-none me-1 order-lg-1" href="index.html">
-                            <img src="<?= roothtml.'lib/images/1.jpg'?>" class="rounded-3" width="50"
+                        <a class="navbar-brand d-none d-sm-block flex-shrink-0 me-4 order-lg-1" href="<?= roothtml .'index.php' ?>"><img
+                                src="<?= roothtml.'lib/images/mainlogo.png'?>" width="145" alt="Cartzilla"></a><a
+                            class="navbar-brand d-sm-none me-1 order-lg-1" href="<?= roothtml . 'index.php' ?>">
+                            <img src="<?= roothtml.'lib/images/3.jpg'?>" class="rounded-3" width="50"
                                 alt="Cartzilla"></a>
                     </div>
 
                     <!-- Refresh Icon -->
                     <div>
-                        <a class="navbar-tool-icon-box bg-light dropdown-toggle"
-                                href="<?= roothtml.'index.php'?>"><i class="navbar-tool-icon ci-reply"></i></a>
+                        <a class="navbar-tool-icon-box dropdown-toggle" href="<?= roothtml.'index.php'?>"><i
+                                class="navbar-tool-icon ci-reply"></i></a>
                     </div>
                 </div>
             </div>
@@ -105,6 +105,56 @@
     }
 ?>
     </main>
+
+    <!-- <script src="<?=roothtml.'pages/pagereload.js'?>"></script> -->
+    <!-- jQuery -->
+    <script src="<?= roothtml . 'lib/jquery/jquery.min.js' ?>"></script>
+    <script>
+    $(document).ready(function() {
+        const entries = performance.getEntriesByType("navigation");
+        if (entries.length > 0 && entries[0].type === "reload") {
+            var username = "<?php echo $_SESSION['esportclient_username'] ?>";
+            var password = "<?php echo $_SESSION['esportclient_userpassword'] ?>";
+            var portfolio = "<?php echo $_SESSION['esportclient_portfolio'] ?>";
+            var gpid = "<?php echo $_SESSION['esportclient_gpid'] ?>";
+
+            $.ajax({
+                type: "post",
+                url: "<?php echo roothtml.'index_action.php' ?>",
+                data: {
+                    action: 'sportlogin',
+                    portfolio: portfolio,
+                    gpid: gpid
+                },
+                success: function(data) {
+                    try {
+                        // Parse JSON response
+                        var jsonData = typeof data === "string" ? JSON.parse(data) : data;
+
+                        if (jsonData.status === "success") {
+                            let redirectUrl = jsonData.redirect_url;
+
+                            // Redirect to the login URL
+                            window.location.href = "<?= roothtml.'pages/localhome.php'?>" +
+                                "?target_url=" + encodeURIComponent(redirectUrl);
+                        } else if (data == 404) {
+                            location.href = "<?=roothtml.'login/login.php'?>";
+                        } else {
+                            console.log("Error data", jsonData);
+                            swal("Error", "Login failed", "error");
+                        }
+                    } catch (err) {
+                        console.error("Invalid JSON:", err, data);
+                        swal("Error", "Unexpected server response", "error");
+                    }
+                },
+                error: function() {
+                    swal("Error", "Server error occurred", "error");
+                }
+            });
+        }
+    });
+    </script>
 </body>
 
 </html>

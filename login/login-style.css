@@ -35,11 +35,11 @@
     object-fit: contain;
 }
   
-.form-control {
+.form-controlone {
     border-radius: 20px;
 }
 
-.form-icon {
+.form-iconone {
     position: absolute;
     top: 50%;
     left: 15px;
@@ -47,7 +47,7 @@
     color: #0f3e53;
 }
 
-.form-group {
+.form-groupone {
     position: relative;
 }
 

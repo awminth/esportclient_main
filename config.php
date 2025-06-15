@@ -83,30 +83,70 @@ function load_agent(){
     return $out;
 }
 
-function GetString($sql){
+function GetString($sql, $params = []) {
     global $con;
-    $str="";   
-    $result=mysqli_query($con,$sql) or die("Query Fail");
-    if(mysqli_num_rows($result)>0){
-        $row = mysqli_fetch_array($result);
-       $str= $row[0];
+    $str = "";
+
+    $stmt = $con->prepare($sql);
+    if ($stmt === false) {
+        die("Prepare failed: " . $con->error);
     }
 
-    return $str;
+    if (!empty($params)) {
+        // Generate bind types automatically
+        $types = '';
+        foreach ($params as $param) {
+            if (is_int($param)) {
+                $types .= 'i';
+            } elseif (is_float($param)) {
+                $types .= 'd';
+            } else {
+                $types .= 's';
+            }
+        }
 
+        $stmt->bind_param($types, ...$params);
+    }
+
+    $stmt->execute();
+    $stmt->bind_result($str);
+    $stmt->fetch();
+    $stmt->close();
+
+    return $str;
 }
 
-function GetInt($sql){
+function GetInt($sql, $params = []) {
     global $con;
-    $str=0;   
-    $result=mysqli_query($con,$sql) or die("Query Fail");
-    if(mysqli_num_rows($result)>0){
-        $row = mysqli_fetch_array($result);
-       $str= $row[0];
+    $value = 0;
+
+    $stmt = $con->prepare($sql);
+    if ($stmt === false) {
+        die("Prepare failed: " . $con->error);
     }
 
-    return $str;
+    if (!empty($params)) {
+        // Auto-generate parameter types
+        $types = '';
+        foreach ($params as $param) {
+            if (is_int($param)) {
+                $types .= 'i';
+            } elseif (is_float($param)) {
+                $types .= 'd';
+            } else {
+                $types .= 's';
+            }
+        }
 
+        $stmt->bind_param($types, ...$params);
+    }
+
+    $stmt->execute();
+    $stmt->bind_result($value);
+    $stmt->fetch();
+    $stmt->close();
+
+    return $value;
 }
 
 function GetBool($sql){

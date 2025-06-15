@@ -15,15 +15,15 @@ include(root.'master/header.php');
         <form class="mt-5 pt-3" id="frmlogin" method="POST">
             <input type="hidden" name="action" value="login" />
             <!-- Email -->
-            <div class="form-group mb-3">
-                <i class="ci-user form-icon"></i>
-                <input type="text" class="form-control ps-5" placeholder="Username" required name="username" />
+            <div class="form-groupone mb-3">
+                <i class="ci-user form-iconone"></i>
+                <input type="text" class="form-controlone form-control ps-5" placeholder="Username" required name="username" />
             </div>
 
             <!-- Password -->
-            <div class="form-group mb-3">
-                <i class="ci-locked form-icon"></i>
-                <input type="password" class="form-control ps-5" placeholder="Password" required name="password" />
+            <div class="form-groupone mb-3">
+                <i class="ci-locked form-iconone"></i>
+                <input type="password" class="form-controlone form-control ps-5" placeholder="Password" required name="password" />
             </div><br>
 
             <!-- Login Button -->

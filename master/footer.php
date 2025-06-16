@@ -1,7 +1,5 @@
 <!-- Footer-->
 </main>
-<footer class="footer bgcolour pt-5">
-</footer>
 <!-- Toolbar for handheld devices (Marketplace)-->
 <div class="bg-dark">
     <div class="d-table table-layout-fixed w-100">

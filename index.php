@@ -37,6 +37,23 @@
         </div>
     </div>
 </div>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <a href="#home1" class="nav-link active" data-bs-toggle="tab" role="tab">
+            <i class="ci-home me-2"></i>
+            Home
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#profile1" class="nav-link" data-bs-toggle="tab" role="tab">
+            <i class="ci-user-circle me-2"></i>
+            Profile
+        </a>
+    </li>
+</ul>
+
 <!-- footer -->
 <?php
     include(root."master/footer.php");

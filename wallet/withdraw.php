@@ -10,7 +10,7 @@ include(root . "master/header.php");
                         class="ci-reply"></i></a></h4>
         </div>
         <div class="col-8">
-            <h3 class=" m-4" style="color: white;">TopUp</h3>
+            <h3 class=" m-4" style="color: white;">Withdraw</h3>
         </div>
     </div>
 </div>
@@ -48,9 +48,9 @@ $(document).ready(function() {
         e.preventDefault();
         var payment = $(this).data("payment");
         if (payment == "kpay") {
-            location.href = "<?= roothtml . 'wallet/topupkpay.php' ?>";
+            location.href = "<?= roothtml . 'wallet/withdrawkpay.php' ?>";
         } else {
-            location.href = "<?= roothtml . 'wallet/topupwave.php' ?>";
+            location.href = "<?= roothtml . 'wallet/withdrawwave.php' ?>";
         }
     });
 });

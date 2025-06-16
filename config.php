@@ -185,7 +185,7 @@ function load_user(){
 function save_log($des){
     global $con;
     $dt=date("Y-m-d H:i:s");
-    $userid=$_SESSION['userid'];
+    $userid=$_SESSION['esportclient_userid'];
     $sql="insert into tbllog (Description,UserID,Date) values ('{$des}'
     ,$userid,'{$dt}')";
     mysqli_query($con,$sql);   

@@ -22,6 +22,9 @@
     <!-- Vendor Styles including: Font Icons, Plugins, etc.-->
     <link rel="stylesheet" media="screen" href="<?= roothtml . 'lib/vendor/simplebar/dist/simplebar.min.css' ?>" />
     <link rel="stylesheet" media="screen" href="<?= roothtml . 'lib/vendor/tiny-slider/dist/tiny-slider.css' ?>" />
+    <link rel="stylesheet" media="screen" href="<?=roothtml.'lib/vendor/prismjs/themes/prism.css'?>" />
+    <link rel="stylesheet" media="screen" href="<?=roothtml.'lib/vendor/prismjs/plugins/toolbar/prism-toolbar.css'?>" />
+    <link rel="stylesheet" media="screen" href="<?=roothtml.'lib/vendor/prismjs/plugins/line-numbers/prism-line-numbers.css'?>" />
     <!-- Main Theme Styles + Bootstrap-->
     <link rel="stylesheet" media="screen" href="<?= roothtml . 'lib/css/theme.min.css' ?>">
 

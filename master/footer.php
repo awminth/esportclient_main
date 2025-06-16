@@ -6,21 +6,22 @@
 <div class="bg-dark">
     <div class="d-table table-layout-fixed w-100">
         <a class="d-table-cell handheld-toolbar-item <?php echo (curlink == 'index.php')?'bgactive' : '' ?>"
-         href="<?= roothtml . 'index.php' ?>">
+            href="<?= roothtml . 'index.php' ?>">
             <span class="handheld-toolbar-icon text-danger"><i class="ci-home"></i></span>
             <span class="handheld-toolbar-label text-white">Home</span>
         </a>
         <?php if (isset($_SESSION["esportclient_username"])) { ?>
-        <a class="d-table-cell handheld-toolbar-item <?php echo (curlink == 'mainwallet.php')?'bgactive' : '' ?>" 
-        href="<?= roothtml . 'wallet/mainwallet.php' ?>">
+        <a class="d-table-cell handheld-toolbar-item <?php echo (curlink == 'mainwallet.php' || 
+        curlink == 'topupkpay.php' || curlink == 'topupwave.php' || curlink == 'withdrawkpay.php' || 
+        curlink == 'withdrawwave.php' || curlink == 'history.php')?'bgactive' : '' ?>"
+            href="<?= roothtml . 'wallet/mainwallet.php' ?>">
             <span class="handheld-toolbar-icon text-danger"><i class="ci-coins"></i>
             </span>
             <span class="handheld-toolbar-label text-white">Wallet</span>
         </a>
         <?php } ?>
-        <a class="d-table-cell handheld-toolbar-item <?php echo (curlink == 'mainprofile.php')?'bgactive' : '' ?>" 
-
-        href="<?= roothtml . 'profile/mainprofile.php' ?>">
+        <a class="d-table-cell handheld-toolbar-item <?php echo (curlink == 'mainprofile.php')?'bgactive' : '' ?>"
+            href="<?= roothtml . 'profile/mainprofile.php' ?>">
             <span class="handheld-toolbar-icon text-danger"><i class="ci-user"></i></span>
             <span class="handheld-toolbar-label text-white">Profile</span>
         </a>

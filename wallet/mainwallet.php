@@ -24,7 +24,7 @@ $getAmount = getint("SELECT Balance FROM tblplayer WHERE UserName = ?", [$_SESSI
         </div>
         <div class="col-4">
             <!-- Circle icon + label -->
-            <a href="">
+            <a href="<?= roothtml.'wallet/withdraw.php'?>">
                 <div class="mainwallet-circle">
                     <!-- Replace 'fa-star' with your desired logo -->
                     <i class="ci-dollar"></i>
@@ -34,7 +34,7 @@ $getAmount = getint("SELECT Balance FROM tblplayer WHERE UserName = ?", [$_SESSI
         </div>
         <div class="col-4">
             <!-- Circle icon + label -->
-            <a href="">
+            <a href="<?=roothtml. 'wallet/history.php'?>">
                 <div class="mainwallet-circle">
                     <!-- Replace 'fa-star' with your desired logo -->
                     <i class="ci-view-list"></i>

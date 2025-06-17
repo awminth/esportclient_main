@@ -29,8 +29,9 @@
     <link rel="stylesheet" media="screen" href="<?= roothtml . 'lib/css/theme.min.css' ?>">
 
     <!-- login css -->
-    <link rel="stylesheet" media="screen" href="<?= roothtml . 'login/login-style.css' ?>">
-    <link rel="stylesheet" media="screen" href="<?= roothtml . 'wallet/topup-style.css' ?>">
+    <link rel="stylesheet" media="screen" href="<?= roothtml . 'css/login-style.css' ?>">
+    <link rel="stylesheet" media="screen" href="<?= roothtml . 'css/topup-style.css' ?>">
+    <link rel="stylesheet" media="screen" href="<?= roothtml . 'css/profilestyle.css' ?>">
 
     <style>
     /* Desktop View */

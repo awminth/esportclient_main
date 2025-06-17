@@ -18,15 +18,16 @@
             <span class="handheld-toolbar-label text-white">Wallet</span>
         </a>
         <?php } ?>
-        <a class="d-table-cell handheld-toolbar-item <?php echo (curlink == 'mainprofile.php')?'bgactive' : '' ?>"
+        <a class="d-table-cell handheld-toolbar-item <?php echo (curlink == 'mainprofile.php' || 
+        curlink == "changepassword.php")?'bgactive' : '' ?>"
             href="<?= roothtml . 'profile/mainprofile.php' ?>">
             <span class="handheld-toolbar-icon text-danger"><i class="ci-user"></i></span>
             <span class="handheld-toolbar-label text-white">Profile</span>
         </a>
-        <a class="d-table-cell handheld-toolbar-item" href="#">
+        <a class="d-table-cell handheld-toolbar-item" href="<?=roothtml.'service/service.php'?>">
             <span class="handheld-toolbar-icon text-danger"><i class="ci-support"></i>
             </span>
-            <span class="handheld-toolbar-label text-white">About Us</span>
+            <span class="handheld-toolbar-label text-white">Service</span>
         </a>
     </div>
 </div>

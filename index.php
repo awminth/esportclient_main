@@ -19,8 +19,8 @@
         <div class="col-6 tns-item tns-slide-active">
             <article class="card border-0">
                 <div class="card-img-top position-relative overflow-hidden">
-                    <a class="d-block"><img src="<?=roothtml.'lib/images/sbo.jpg'?>" alt="Product image"
-                            id="sportone" style="height: 180px;"></a>
+                    <a class="d-block"><img src="<?=roothtml.'lib/images/sbo.jpg'?>" alt="Product image" id="sportone"
+                            style="height: 180px;"></a>
                 </div>
                 <h5 class="product-title mb-2 fs-base text-center mt-2">SBO Sports</h5>
             </article>
@@ -29,8 +29,8 @@
         <div class="col-6 tns-item tns-slide-active">
             <article class="card border-0">
                 <div class="card-img-top position-relative overflow-hidden">
-                    <a class="d-block"><img src="<?=roothtml.'lib/images/afb.jpg'?>" alt="Product image"
-                            id="sporttwo" style="height: 180px;"></a>
+                    <a class="d-block"><img src="<?=roothtml.'lib/images/afb.jpg'?>" alt="Product image" id="sporttwo"
+                            style="height: 180px;"></a>
                 </div>
                 <h5 class="product-title mb-2 fs-base text-center mt-2">Live Casino</h5>
             </article>

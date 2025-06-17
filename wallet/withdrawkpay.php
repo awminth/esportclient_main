@@ -88,7 +88,7 @@ $(document).ready(function() {
         var formData = new FormData(this);
         $.ajax({
             type: "post",
-            url: "<?php echo roothtml.'wallet/wallet_action.php' ?>",
+            url: "<?php echo roothtml.'wallet/mainwallet_action.php' ?>",
             data: formData,
             contentType: false,
             processData: false,

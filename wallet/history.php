@@ -25,7 +25,7 @@ include(root . "master/header.php");
             </a>
         </li>
         <li class="nav-item">
-            <a href="#profile1" class="nav-link" data-bs-toggle="tab" role="tab">
+            <a href="#withdrawpage" class="nav-link" data-bs-toggle="tab" role="tab">
                 <i class="ci-dollar me-2"></i>
                 WITHDRAW
             </a>
@@ -52,14 +52,19 @@ include(root . "master/header.php");
         </div>
 
         <!-- Withdraw Tab -->
-        <div class="tab-pane fade show" id="profile1" role="tabpanel">
+        <div class="tab-pane fade show" id="withdrawpage" role="tabpanel">
             <div class="mb-3">
-                <select class="form-select" id="select-input">
-                    <option>Today</option>
-                    <option>Last 7 Day</option>
-                    <option>1 Months </option>
-                    <option>ALL</option>
+                <input type="hidden" name="hidwithdrawdate">
+                <select class="form-select" id="withdrawdate">
+                    <option value="1">Today</option>
+                    <option value="2">Last 7 Day</option>
+                    <option value="3">1 Months </option>
+                    <option value="4">ALL</option>
                 </select>
+            </div>
+            <!-- Link with href -->
+            <div id="loadpagewithdraw">
+                <!-- Return from loadpagesetup -->
             </div>
         </div>
     </div>
@@ -111,71 +116,99 @@ include(root . "master/header.php");
 <!-- jQuery -->
 <script src="<?= roothtml . 'lib/jquery/jquery.min.js' ?>"></script>
 <script>
-    $(document).ready(function() {
-        function loadpagetopup() {
-            var entryvalue = $("[name='hidselectdate']").val();
-            $.ajax({
-                url: '<?= roothtml . 'wallet/history_action.php' ?>',
-                type: 'POST',
-                data: {
-                    action: "loadpagetopup",
-                    entryvalue: entryvalue
-                },
-                success: function(data) {
-                    $('#loadpagetopup').html(data);
-                },
-                error: function() {
-                    alert('Error loading page');
-                }
-            });
-        }
+$(document).ready(function() {
+
+    //topup history
+    function loadpagetopup() {
+        var entryvalue = $("[name='hidselectdate']").val();
+        $.ajax({
+            url: '<?= roothtml . 'wallet/history_action.php' ?>',
+            type: 'POST',
+            data: {
+                action: "loadpagetopup",
+                entryvalue: entryvalue
+            },
+            success: function(data) {
+                $('#loadpagetopup').html(data);
+            },
+            error: function() {
+                alert('Error loading page');
+            }
+        });
+    }
+    loadpagetopup();
+
+    $(document).on("change", "#selectdate", function() {
+        var entryvalue = $(this).val();
+        $("[name='hidselectdate']").val(entryvalue);
         loadpagetopup();
+    });
 
-        $(document).on("change", "#selectdate", function() {
-            var entryvalue = $(this).val();
-            $("[name='hidselectdate']").val(entryvalue);
-            loadpagetopup();
-        });
+    $(document).on("click", "#edittopup", function(e) {
+        e.preventDefault();
+        var aid = $(this).data("aid");
+        var amount = $(this).data("amount");
+        var transitioncode = $(this).data("transitioncode");
+        $("[name='editamount']").val(amount);
+        $('[name="editcode"]').val(transitioncode);
+        $('[name="editaid"]').val(aid);
+        $("#editmodal").modal("show");
+    });
 
-        $(document).on("click", "#edittopup", function(e) {
-            e.preventDefault();
-            var aid = $(this).data("aid");
-            var amount = $(this).data("amount");
-            var transitioncode = $(this).data("transitioncode");
-            $("[name='editamount']").val(amount);
-            $('[name="editcode"]').val(transitioncode);
-            $('[name="editaid"]').val(aid);
-            $("#editmodal").modal("show");
-        });
-
-        $("#frmedittopup").on("submit", function(e) {
-            e.preventDefault();
-            var formData = new FormData(this);
-            $("#editmodal").modal("hide");
-            $.ajax({
-                type: "post",
-                url: "<?php echo roothtml . 'wallet/history_action.php' ?>",
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function(data) {
-                    if (data == 1) {
-                        swal({
-                            title: "Success",
-                            text: "Edit Topup successful!",
-                            icon: "success",
-                            buttons: false,
-                        });
-                        loadpagetopup();
-                    } else if (data == 0) {
-                        swal("Error", "Invalid kpayname or kpayno", "error");
-                    } else {
-                        // Show any other unexpected output as error
-                        swal("Error", "Edit failed: " + data, "error");
-                        //alert(data);
-                    }
+    $("#frmedittopup").on("submit", function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        $("#editmodal").modal("hide");
+        $.ajax({
+            type: "post",
+            url: "<?php echo roothtml . 'wallet/history_action.php' ?>",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                if (data == 1) {
+                    swal({
+                        title: "Success",
+                        text: "Edit Topup successful!",
+                        icon: "success",
+                        buttons: false,
+                    });
+                    loadpagetopup();
+                } else if (data == 0) {
+                    swal("Error", "Invalid kpayname or kpayno", "error");
+                } else {
+                    // Show any other unexpected output as error
+                    swal("Error", "Edit failed: " + data, "error");
+                    //alert(data);
                 }
-            });
+            }
         });
     });
+
+    //withdraw history
+    function loadpagewithdraw() {
+        var entryvalue = $("[name='hidwithdrawdate']").val();
+        $.ajax({
+            url: '<?= roothtml . 'wallet/history_action.php' ?>',
+            type: 'POST',
+            data: {
+                action: "loadpagewithdraw",
+                entryvalue: entryvalue
+            },
+            success: function(data) {
+                $('#loadpagewithdraw').html(data);
+            },
+            error: function() {
+                alert('Error loading page');
+            }
+        });
+    }
+    loadpagewithdraw();
+
+    $(document).on("change", "#withdrawdate", function() {
+        var entryvalue = $(this).val();
+        $("[name='hidwithdrawdate']").val(entryvalue);
+        loadpagewithdraw();
+    });
+});
 </script>

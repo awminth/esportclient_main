@@ -3,32 +3,8 @@
     include("config.php");
     include(root."master/header.php");
 ?>
-<!-- Datetime and Welcome Message -->
-<div class="datetime-container mt-1">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="datetime-container">
-                    <!-- Datetime -->
-                    <div class="col-sm-6">
-                        <span class="datetime">
-                            <?php
-                        date_default_timezone_set('Asia/Yangon');
-                        echo date('m/d/Y | h:i:s');
-                        ?>
-                        </span>
-                    </div>
-
-                    <!-- Welcome Message Container -->
-                    <div class="welcome-message-container col-sm-6">
-                        <span class="welcome-message">Welcome to HITUPMM - We Wish You Lots of Luck Today...</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+<!-- <section class="container pb-5 mb-lg-3 bg-success mt-1"> -->
+<!-- One item + Dots + Loop (defaults) -->
 <div class="tns-carousel tns-nav-enabled m-3">
     <div class="tns-carousel-inner" style="height:190px;">
         <img src="<?=roothtml.'lib/images/1.jpg'?>" alt="Alt text" style="height: 100%;" class="rounded-3">
@@ -60,21 +36,6 @@
             </article>
         </div>
     </div>
-</div>
-<!-- Disclaimer Section -->
-<div class="footer-disclaimer mt-5">
-    <p>
-        Disclaimer: You must ensure that you meet all age and other regulatory requirements before entering our site to
-        place a bet.
-        <br />
-        You are responsible for determining if it is legal for YOU to play any particular games or place any particular
-        wager.
-    </p>
-</div>
-
-<!-- Copyright Section -->
-<div class="footer-copyright">
-    <p>Copyright 2025 HITUPMM.com All rights reserved.</p>
 </div>
 
 <!-- footer -->

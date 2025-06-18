@@ -24,7 +24,8 @@
     <link rel="stylesheet" media="screen" href="<?= roothtml . 'lib/vendor/tiny-slider/dist/tiny-slider.css' ?>" />
     <link rel="stylesheet" media="screen" href="<?=roothtml.'lib/vendor/prismjs/themes/prism.css'?>" />
     <link rel="stylesheet" media="screen" href="<?=roothtml.'lib/vendor/prismjs/plugins/toolbar/prism-toolbar.css'?>" />
-    <link rel="stylesheet" media="screen" href="<?=roothtml.'lib/vendor/prismjs/plugins/line-numbers/prism-line-numbers.css'?>" />
+    <link rel="stylesheet" media="screen"
+        href="<?=roothtml.'lib/vendor/prismjs/plugins/line-numbers/prism-line-numbers.css'?>" />
     <!-- Main Theme Styles + Bootstrap-->
     <link rel="stylesheet" media="screen" href="<?= roothtml . 'lib/css/theme.min.css' ?>">
 
@@ -32,52 +33,7 @@
     <link rel="stylesheet" media="screen" href="<?= roothtml . 'css/login-style.css' ?>">
     <link rel="stylesheet" media="screen" href="<?= roothtml . 'css/topup-style.css' ?>">
     <link rel="stylesheet" media="screen" href="<?= roothtml . 'css/profilestyle.css' ?>">
-
-    <style>
-    /* Desktop View */
-    @media screen and (min-width: 1024px) {
-        .bodycontainer {
-            width: 33%;
-            margin: 0 auto;
-            /* အလယ်မှာထားဖို့ */
-        }
-    }
-
-    .bgcolour {
-        background-color: #2E2E2E;
-    }
-
-    .bgactive {
-        background-color: rgba(241, 237, 237, 0.33);
-    }
-
-    .mainwallet-circle {
-        background-color: rgba(0, 0, 0, 0.2);
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: auto;
-        transition: background-color 0.5s ease;
-    }
-
-    .mainwallet-circle i {
-        font-size: 35px;
-        color: rgba(90, 231, 184, 0.73);
-    }
-
-    .mainwallet-label {
-        margin-top: 10px;
-        color: white;
-    }
-
-    .mainwallet-circle:hover {
-        background-color: rgba(114, 167, 118, 0.51);
-        /* Change as needed */
-    }
-    </style>
+    <link rel="stylesheet" media="screen" href="<?= roothtml . 'css/masterstyle.css' ?>">
 </head>
 <!-- Body-->
 

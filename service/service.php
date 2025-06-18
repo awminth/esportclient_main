@@ -2,8 +2,6 @@
 <?php
 include("../config.php");
 include(root . "master/header.php");
-
-$getAmount = getint("SELECT Balance FROM tblplayer WHERE UserName = ?", [$_SESSION["esportclient_username"]]);
 ?>
 <h3 class="text-center mt-4" style="color: white;">Contact Us</h3>
 <!-- Warning Message -->

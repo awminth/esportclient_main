@@ -75,30 +75,6 @@ if ($action == "sportlogin") {
                     $url = $apiResponse['url'];
                     if (strpos($url, '//') === 0) {
                         $url = 'https:' . $url;
-                        // Add query parameters
-                        $parsed_url = parse_url($url);
-
-                        // Build the new query string
-                        $additional_params = [
-                            'lang' => 'en',
-                            'oddstyle' => 'MY',
-                            'theme' => 'sbomain',
-                            'oddsmode' => 'double',
-                            'device' => 'd',
-                            'recommendmatchid' => 0
-                        ];
-
-                        // Preserve existing query if any
-                        parse_str($parsed_url['query'] ?? '', $existing_params);
-
-                        // Merge existing and new
-                        $merged_params = array_merge($existing_params, $additional_params);
-
-                        // Rebuild query string
-                        $query_string = http_build_query($merged_params);
-
-                        // Rebuild the full URL
-                        $final_url = "{$parsed_url['scheme']}://{$parsed_url['host']}{$parsed_url['path']}?$query_string";
                     }
 
                     //for local xampp
@@ -107,7 +83,7 @@ if ($action == "sportlogin") {
                     // Redirect to one-time login URL
                     echo json_encode([
                         "status" => "success",
-                        "redirect_url" => $final_url
+                        "redirect_url" => $url
                     ]);
                     exit();
                 } 

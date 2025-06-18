@@ -54,9 +54,10 @@
                 <div class="d-flex justify-content-between align-items-center py-2 px-3">
                     <!-- Logo -->
                     <div class="d-flex align-items-center">
-                        <a class="navbar-brand d-none d-sm-block flex-shrink-0 me-4 order-lg-1" href="<?= roothtml .'index.php' ?>"><img
-                                src="<?= roothtml.'lib/images/mainlogo.png'?>" width="145" alt="Cartzilla"></a><a
-                            class="navbar-brand d-sm-none me-1 order-lg-1" href="<?= roothtml . 'index.php' ?>">
+                        <a class="navbar-brand d-none d-sm-block flex-shrink-0 me-4 order-lg-1"
+                            href="<?= roothtml .'index.php' ?>"><img src="<?= roothtml.'lib/images/mainlogo.png'?>"
+                                width="145" alt="Cartzilla"></a><a class="navbar-brand d-sm-none me-1 order-lg-1"
+                            href="<?= roothtml . 'index.php' ?>">
                             <img src="<?= roothtml.'lib/images/3.jpg'?>" class="rounded-3" width="50"
                                 alt="Cartzilla"></a>
                     </div>
@@ -70,40 +71,52 @@
             </div>
         </header>
 
-
-
-
         <?php
-    // localhome.php
-    $allowedDomains = [
-        '568win.com',
-        'ex-api-demo-yy.568win.com',
-        'ggppqqgg.com',
-        'sports-demo.ggppqqgg.com' // သင်သုံးနေတဲ့ domain
-    ];
+            // ခွင့်ပြုထားတဲ့ domain စာရင်း
+            $allowedDomains = [
+                '568win.com',
+                'ex-api-demo-yy.568win.com',
+                'ggppqqgg.com',
+                'sports-demo.ggppqqgg.com', // သင်သုံးနေတဲ့ domain
+                'lmd-uat.gaolitsai.com'      // သင်ထည့်လိုတဲ့ အသစ် domain
+            ];
 
-    if (isset($_GET['target_url'])) {
-        $url = $_GET['target_url'];
-        $parsedUrl = parse_url($url);
-        $host = $parsedUrl['host'] ?? '';
+            // target_url parameter ရှိမရှိစစ်တယ်
+            if (isset($_GET['target_url'])) {
+                $url = $_GET['target_url'];
 
-        if (in_array($host, $allowedDomains)) {
-            $safeUrl = htmlspecialchars($url);
-            echo '
-            <div class="iframe-container">
-                <iframe id="myIframe" src="'.$safeUrl.'" 
-                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation"
-                    scrolling="true"
-                    referrerpolicy="no-referrer"
-                    allowfullscreen></iframe>
-            </div>';
-        } else {
-            echo "<p>This URL is not allowed to be shown in an iframe.</p>";
-        }
-    } else {
-        echo "<p>No target URL provided.</p>";
-    }
-?>
+                // URL တန်ဖိုး တကယ်တော့ တရားဝင်တာလား စစ်တယ်
+                if (!filter_var($url, FILTER_VALIDATE_URL)) {
+                    echo "<p>Invalid URL provided.</p>";
+                    exit;
+                }
+
+                // URL ကနေ host(domain) ကို ဖယ်ထုတ်တယ်
+                $parsedUrl = parse_url($url);
+                $host = $parsedUrl['host'] ?? '';
+
+                // domain ခွင့်ပြုထားတာလား စစ်တယ်
+                if (in_array($host, $allowedDomains)) {
+                    // XSS ကာကွယ်ဖို့အတွက် URL ကို escape လုပ်တယ်
+                    $safeUrl = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+
+                    // iframe ပြသတယ်
+                    echo '
+                    <div class="iframe-container">
+                        <iframe id="myIframe" src="'.$safeUrl.'" 
+                            sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation"
+                            scrolling="yes"
+                            referrerpolicy="no-referrer"
+                            allowfullscreen>
+                        </iframe>
+                    </div>';
+                } else {
+                    echo "<p>This URL is not allowed to be shown in an iframe.</p>";
+                }
+            } else {
+                echo "<p>No target URL provided.</p>";
+            }
+        ?>
     </main>
 
     <!-- <script src="<?=roothtml.'pages/pagereload.js'?>"></script> -->
